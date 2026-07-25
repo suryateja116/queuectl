@@ -1,0 +1,17 @@
+{
+  "name": "queuectl",
+  "version": "1.0.0",
+  "description": "Node.js CLI project",
+  "type": "commonjs",
+  "bin": {
+    "queuectl": "bin/queuectl.js"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "commander": "^15.0.0",
+    "dotenv": "^17.4.2",
+    "mongodb": "^7.5.0"
+  }
+}
