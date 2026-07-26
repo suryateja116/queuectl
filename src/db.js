@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ quiet: true });
 const { MongoClient } = require('mongodb');
 
 let client = null;
