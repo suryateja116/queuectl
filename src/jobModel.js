@@ -11,7 +11,7 @@ async function enqueueJob({ id, command, max_retries }) {
   const jobs = await getJobsCollection();
   const now = new Date();
 
-  await jobs.insertOne({
+  const doc = {
     _id: id,
     command,
     max_retries,
@@ -23,7 +23,10 @@ async function enqueueJob({ id, command, max_retries }) {
     locked_by: null,
     locked_at: null,
     last_error: null,
-  });
+  };
+
+  await jobs.insertOne(doc);
+  return doc;
 }
 
 /**
