@@ -1,7 +1,9 @@
 const LEASE_MS = 15000;
 const SWEEP_INTERVAL_MS = 5000;
+const STOP_GRACE_MS = 30000;
 
 module.exports = {
   LEASE_MS,
   SWEEP_INTERVAL_MS,
+  STOP_GRACE_MS,
 };
