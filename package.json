@@ -7,11 +7,14 @@
     "queuectl": "bin/queuectl.js"
   },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "server": "node server/index.js"
   },
   "dependencies": {
     "commander": "^15.0.0",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
+    "express": "^5.2.1",
     "mongodb": "^7.5.0"
   }
 }
