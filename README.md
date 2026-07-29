@@ -52,6 +52,37 @@ queuectl config get
 queuectl config set max-retries 5
 ```
 
+## Web Dashboard (bonus)
+
+This project also includes an optional Express API and React dashboard for visually monitoring the queue. This is built on top of the exact same `src/jobModel.js` and `src/configModel.js` the CLI uses — not a separate system.
+
+Running it requires two terminals open at the same time:
+
+**Terminal 1** (from the project root):
+```bash
+npm run server
+```
+*(Starts the Express API on http://localhost:4000)*
+
+**Terminal 2**:
+```bash
+cd dashboard
+npm install   # (first time only)
+npm run dev
+```
+*(Starts the Vite dev server, prints a URL, typically http://localhost:5173)*
+
+Then open that URL in a browser. Both terminals must stay running the whole time the dashboard is in use.
+
+The dashboard displays:
+- Live job counts by state
+- Active workers
+- A filterable jobs table
+- A DLQ view with one-click retry
+- A config panel for max-retries and backoff-base
+
+All of this data auto-refreshes every 3 seconds.
+
 ## Architecture
 
 - `bin/queuectl.js`: The main CLI entry point, wired up with the `commander` library to parse arguments and route to sub-commands.
